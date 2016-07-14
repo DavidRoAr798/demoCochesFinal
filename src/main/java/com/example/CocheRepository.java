@@ -15,6 +15,8 @@ public interface CocheRepository extends JpaRepository<Coche,Long> {
 
     List<Coche> findByAñoBetween (Integer min, Integer max);
 
+    List<Coche> findByAño(Integer año);
+
     List<Coche> findByPrecioGreaterThanEqual(Double precio);
 
     List<Coche> findByPrecioLessThanEqual(Double precio);
@@ -66,5 +68,6 @@ public interface CocheRepository extends JpaRepository<Coche,Long> {
 
     @Query("SELECT coche.año, COUNT (coche) from Coche coche GROUP BY coche.año")
     List<Object[]> obtenerCochesXAño();
+
 
 }

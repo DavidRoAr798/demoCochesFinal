@@ -173,9 +173,12 @@ public class CocheService {
         System.out.println("Mostrar todos los coches de un mismo año ");
         List<Object[]> añoList = cocheRepository.obtenerCochesXAño();
 
-        for (Object[] año : añoList) {
-            System.out.println("Año: " + año[0] + " ");
-            System.out.println("Numero de coches de cada año " + año[1]);
+        for (Object[] añoCar : añoList) {
+
+            Integer año = (Integer) añoCar[0];
+            System.out.println("Año: " + añoCar[0] + " ");
+            System.out.println("Numero de coches de cada año " + añoCar[1]);
+            System.out.println("Los coches son: " + cocheRepository.findByAño(año));
         }
 
     }
