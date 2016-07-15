@@ -106,59 +106,60 @@ public class CocheService {
 
 
         System.out.println("Los coches más nuevos de 2007");
-        System.out.println(cocheRepository.findByAñoGreaterThanEqual(2007));
+        System.out.println(cocheRepository.findByAñoGreaterThanEqual(2007) + System.lineSeparator());
 
         System.out.println("Los coches más antiguos de 2007");
-        System.out.println(cocheRepository.findByAñoLessThanEqual(2007));
+        System.out.println(cocheRepository.findByAñoLessThanEqual(2007) + System.lineSeparator());
 
         System.out.println("Los coches comprendidos entre los años 2005 y 2016 son: ");
-        System.out.println(cocheRepository.findByAñoBetween(2005, 2016));
+        System.out.println(cocheRepository.findByAñoBetween(2005, 2016) + System.lineSeparator());
 
         System.out.println("Los coches con un precio superior a 10.000 son: ");
-        System.out.println(cocheRepository.findByPrecioGreaterThanEqual(10000.0));
+        System.out.println(cocheRepository.findByPrecioGreaterThanEqual(10000.0) + System.lineSeparator());
 
         System.out.println("Los coches con un precio inferior a 10.000 son: ");
-        System.out.println(cocheRepository.findByPrecioLessThanEqual(10000.0));
+        System.out.println(cocheRepository.findByPrecioLessThanEqual(10000.0) + System.lineSeparator());
 
         System.out.println("Los coches comprendidos entre 8.000 y 66.000 son: ");
-        System.out.println(cocheRepository.findByPrecioBetween(8000.0, 66000.0));
+        System.out.println(cocheRepository.findByPrecioBetween(8000.0, 66000.0) + System.lineSeparator());
 
         System.out.println("Mostrar el coche con la matricula 9899BVS");
-        System.out.println(cocheRepository.findByMatricula("9899BVS"));
+        System.out.println(cocheRepository.findByMatricula("9899BVS") + System.lineSeparator());
+
 
         System.out.println("Los coches de la marca Porsche son: ");
-        System.out.println(cocheRepository.findByMarca("Porsche"));
+        System.out.println(cocheRepository.findByMarca("Porsche") + System.lineSeparator());
 
         System.out.println("Buscar coche por marca y modelo: Opel Corsa");
-        System.out.println(cocheRepository.findByMarcaAndModelo("Opel", "Corsa"));
+        System.out.println(cocheRepository.findByMarcaAndModelo("Opel", "Corsa") + System.lineSeparator());
 
         System.out.println("Buscar coche por marca y con un precio inferior a 10.000$");
-        System.out.println(cocheRepository.findByMarcaAndPrecioLessThanEqual("Opel", 10000.0));
+        System.out.println(cocheRepository.findByMarcaAndPrecioLessThanEqual("Opel", 10000.0) + System.lineSeparator());
 
         System.out.println("La media de precios de los coches de la marca SEAT es la siguiente: ");
-        System.out.println(cocheRepository.obtenerMediaPorMarca("Seat"));
+        System.out.println(cocheRepository.obtenerMediaPorMarca("Seat") + System.lineSeparator());
 
         System.out.println("Los coches de Dimple son: ");
         System.out.println(cocheRepository.findByPropietario(dimple));
 
-        System.out.println(cocheRepository.obtenerCoches(dimple));
+        System.out.println(cocheRepository.obtenerCoches(dimple) + System.lineSeparator());
 
         System.out.println("El coche con de un propietario con precio superior a 62000.0");
-        System.out.println(cocheRepository.findByPropietarioAndPrecioGreaterThanEqual(dimple, 62000.0));
+        System.out.println(cocheRepository.findByPropietarioAndPrecioGreaterThanEqual(dimple, 62000.0) + System.lineSeparator());
 
-        System.out.println(cocheRepository.obtenerCocheCaro(dimple, 62000.0));
+        System.out.println(cocheRepository.obtenerCocheCaro(dimple, 62000.0) + System.lineSeparator());
 
         System.out.println("Mostrar los coches de un propietario (Dimple) entre los años 2005 y 2016");
-        System.out.println(cocheRepository.obtenerCocheEntreAños(dimple, 2005, 2016));
+        System.out.println(cocheRepository.obtenerCocheEntreAños(dimple, 2005, 2016) + System.lineSeparator());
 
         System.out.println("Mostrar todos los coches cuya edad de los propietarios sea superior o igual a 25");
-        System.out.println(cocheRepository.obtenerCocheXEdad(25));
+        System.out.println(cocheRepository.obtenerCocheXEdad(25) + System.lineSeparator());
 
         System.out.println("Mostrar todos los coches en base a la edad de los propietarios comprendida entre 20 a 25");
-        System.out.println(cocheRepository.obtenerCocheXEdadEntre(20, 25));
+        System.out.println(cocheRepository.obtenerCocheXEdadEntre(20, 25) + System.lineSeparator());
 
         System.out.println("Mostrar un coche por las letras de su matricula, en este caso BVS");
-        System.out.println(cocheRepository.obtenerMatriculaByLetras("BVS"));
+        System.out.println(cocheRepository.obtenerMatriculaByLetras("BVS") + System.lineSeparator());
 
         System.out.println("Mostrar la media, el minimo y el máximo, del precio de los vehículos de cada marca");
         List<Object[]> marcaList = cocheRepository.obtenerMidMinMax();
@@ -167,7 +168,7 @@ public class CocheService {
             System.out.println("Marca: " + marca[0] + " ");
             System.out.println("Media: " + marca[1] + " ");
             System.out.println("MIN: " + marca[2] + " ");
-            System.out.println("MAX: " + marca[3] + " ");
+            System.out.println("MAX: " + marca[3] + " " + System.lineSeparator() + System.lineSeparator());
         }
 
         System.out.println("Mostrar todos los coches de un mismo año ");
@@ -178,7 +179,7 @@ public class CocheService {
             Integer año = (Integer) añoCar[0];
             System.out.println("Año: " + añoCar[0] + " ");
             System.out.println("Numero de coches de cada año " + añoCar[1]);
-            System.out.println("Los coches son: " + cocheRepository.findByAño(año));
+            System.out.println("Los coches son: " + cocheRepository.findByAño(año) + System.lineSeparator());
         }
 
     }
