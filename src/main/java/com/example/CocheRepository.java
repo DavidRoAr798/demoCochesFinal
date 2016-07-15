@@ -63,7 +63,8 @@ public interface CocheRepository extends JpaRepository<Coche,Long> {
     @Query("SELECT coche from Coche coche where coche.matricula LIKE(CONCAT('%', :letras,'%'))")
     List<Coche> obtenerMatriculaByLetras(@Param("letras") String letras);
 
-    @Query("SELECT (coche.marca), AVG(coche.precio), MIN (coche.precio), MAX (coche.precio) from Coche coche GROUP BY marca")
+    @Query("SELECT (coche.marca), AVG(coche.precio), MIN (coche.precio), MAX (coche.precio) from Coche coche " +
+            "GROUP BY marca" + " ORDER BY AVG (coche.precio) DESC")
     List<Object[]> obtenerMidMinMax();
 
     @Query("SELECT coche.año, COUNT (coche) from Coche coche GROUP BY coche.año")

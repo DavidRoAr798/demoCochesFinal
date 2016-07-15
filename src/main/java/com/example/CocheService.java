@@ -166,8 +166,8 @@ public class CocheService {
         for (Object[] marca : marcaList) {
             System.out.println("Marca: " + marca[0] + " ");
             System.out.println("Media: " + marca[1] + " ");
-            System.out.println("Media: " + marca[2] + " ");
-            System.out.println("Media: " + marca[3] + " ");
+            System.out.println("MIN: " + marca[2] + " ");
+            System.out.println("MAX: " + marca[3] + " ");
         }
 
         System.out.println("Mostrar todos los coches de un mismo año ");
